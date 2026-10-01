@@ -46,6 +46,7 @@ GPT-4.1 mini was evaluated through an OpenAI-compatible API (temperature
 ## Repository layout
 
 ```
+├── train_mix.yaml                    # LLaMA-Factory training config of YIAN-4B
 ├── infer_eval2.py                    # vLLM batch inference, one config per model
 ├── evaluate_macro_f1_comparison.py   # field-level relaxed macro-F1 evaluation
 ├── data/
@@ -57,6 +58,13 @@ GPT-4.1 mini was evaluated through an OpenAI-compatible API (temperature
 ```
 
 ## Usage
+
+Reproduce YIAN-4B training with LLaMA-Factory (register the TCM-YIAN dataset
+in `dataset_info.json` as `al3` and edit the paths in `train_mix.yaml`):
+
+```bash
+llamafactory-cli train train_mix.yaml
+```
 
 Run inference (edit the model paths in `CONFIGS` first; the YIAN-4B adapter
 can be downloaded from Hugging Face):

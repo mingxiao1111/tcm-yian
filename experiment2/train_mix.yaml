@@ -1,0 +1,43 @@
+# TCM-YIAN final training configuration: LoRA fine-tuning of Qwen3-4B-Instruct-2507
+# Dataset: al3 = tcm_yian_mixT4_alpaca.json (12,500 instructions), to be registered
+# in LLaMA-Factory's dataset_info.json. Paths below refer to the training instance
+# layout; replace them with your own.
+model_name_or_path: /root/autodl-tmp/Qwen3-4B-Instruct-2507
+trust_remote_code: true
+stage: sft
+do_train: true
+finetuning_type: lora
+lora_rank: 8
+lora_alpha: 16
+lora_dropout: 0.1
+lora_target: all
+template: qwen3_nothink
+dataset: al3
+dataset_dir: /root/autodl-tmp/dataset
+cutoff_len: 4096
+max_samples: 100000
+overwrite_cache: true
+preprocessing_num_workers: 8
+output_dir: /root/autodl-tmp/output/tcm_yian_mix
+logging_steps: 5
+plot_loss: true
+optim: adamw_torch
+learning_rate: 2.0e-5
+lr_scheduler_type: cosine
+warmup_ratio: 0.1
+weight_decay: 0.01
+num_train_epochs: 3.0
+bf16: true
+per_device_train_batch_size: 4      # per-device batch 4 x gradient accumulation 16
+gradient_accumulation_steps: 16     # = effective batch size 64
+val_size: 0.1
+per_device_eval_batch_size: 4
+eval_strategy: steps
+eval_steps: 100
+save_strategy: steps
+save_steps: 100
+save_total_limit: 5
+load_best_model_at_end: true
+metric_for_best_model: eval_loss
+greater_is_better: false
+report_to: none
