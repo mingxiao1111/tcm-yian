@@ -19,6 +19,7 @@ Chinese Medicine (TCM) medical cases.
 
 | Directory | Description |
 |---|---|
+| `experiment1/` | Ablation study on 703-case development set: inference inputs, gold standard, BIO sequence-labeling data (RoBERTa-BiLSTM-CRF baseline), and evaluation results |
 | `experiment2/` | Six-model comparison on 1,500 noisy case texts: vLLM inference, field-level relaxed macro-F1 evaluation, predictions and reports |
 
 ## License
