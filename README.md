@@ -4,11 +4,14 @@ Code and evaluation resources for **TCM-YIAN**: an instruction-tuning
 dataset and model for noise-resistant structured extraction of Traditional
 Chinese Medicine (TCM) medical cases.
 
-- **TCM-YIAN dataset** — 12,500 instructions in four tasks over seven
-  clinical element categories (patient information, main symptoms, tongue
-  manifestations, pulse manifestations, syndrome, treatment method, and
-  Chinese herbs), derived from published TCM case-record compilations
-  (Zenodo, CC BY-NC 4.0: https://doi.org/10.5281/zenodo.23053182).
+- **TCM-YIAN dataset** — four tasks over seven clinical element categories
+  (patient information, main symptoms, tongue manifestations, pulse
+  manifestations, syndrome, treatment method, and Chinese herbs), derived
+  from published TCM case-record compilations. Tasks 1–3 (9,000
+  instructions) are publicly available (Zenodo, CC BY-NC 4.0:
+  https://doi.org/10.5281/zenodo.23053182); Task 4 contains verbatim
+  case-text excerpts from the source compilations and is available from the
+  corresponding author upon reasonable request.
 - **TCED entity database** — the clinical element corpus underlying
   TCM-YIAN (Zenodo, CC BY 4.0:
   https://doi.org/10.5281/zenodo.23053127).
